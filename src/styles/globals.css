@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .translate-y-centered-offset {
+        @apply translate-y-[calc(-50%_+_var(--y,_0px))];
+    }
+    .translate-x-centered-offset {
+        @apply translate-x-[calc(-50%_+_var(--x,_0px))];
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+.typeWriter{
+    font-size: 3rem;
+    width: 80%;
+    align-self: flex-start;
+  }
+  
+  .text-1 {
+    color: blue;
+    text-transform: uppercase;
+    font-family: 'Akaya Telivigala', cursive;
+    font-weight: 600;
+  
+  }
+  
+  .text-2 {
+    color: orange;
+    text-transform: uppercase;
+    font-family: 'Akaya Telivigala', cursive;
+    font-weight: 600;
+  
+  }
+  
+  .text-3 {
+    color: red;
+    text-transform: uppercase;
+    font-family: 'Akaya Telivigala', cursive;
+    font-weight: 600;
+  }
+
+  .text-4 {
+    color: green;
+    text-transform: uppercase;
+    font-family: 'Akaya Telivigala', cursive;
+    font-weight: 600;
+  }
+
+  .text-5 {
+    color: blueviolet;
+    text-transform: uppercase;
+    font-family: 'Akaya Telivigala', cursive;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1023px) {
+    .typeWriter{
+        font-size: 2rem;
+        width: 100%;
+        align-self: flex-center;
+      }
+  }
+
+
+/* .row-slide {
+  background-color: red;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0%{ transform: translateX(100%)};
+  100%{ transform: translateX(-100%)}
+} */
+
+
+
+
