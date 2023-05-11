@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
@@ -49,19 +49,44 @@ const vignetteEntreprise = {
 }
 
 
+const OnHoverImage = ({ hoveredImage, image, alt }) => {
+    const [hover, setHover] = useState(false);
+    return (
+      <div
+        style={{ width: "300px", height: "300px" }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        {hover ? (
+            <div className='relative'>
+                
+                <div className='relative h-[300px] z-10 text-light backdrop-blur-sm flex
+                justify-center items-center text-center'>
+                    <p>Text descipriton Jean messiah</p>
+                </div>
+                <div className='absolute inset-0 z-0'>
+                    <Image src={hoveredImage} alt={alt} className=''/>
+                </div>
+            </div>
+
+        ) : (
+          <Image src={hoveredImage} alt={alt} />
+        )}
+      </div>
+    );
+  };
 
 
 const EntrepriseWrap = ({title, img, link, tooltip}) => {
 
     return(
         <article className='flex flex-col items-center justify-center rounded-2xl border relative
-        border-solid border-dark bg-light p-6  dark:bg-dark dark:border-light xs:p-4'>
-            <div className='absolute top-1 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark
-            rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]' />
+        border-solid border-dark bg-light p-1  dark:bg-dark dark:border-light xs:p-4'>
+
             <div
             className='relative z-1 w-full cursor-pointer overflow-hidden rounded-lg'
             >
-                <FramerImage src={img} alt={title} className=" aspect-1/1 lg:h-[275px] lg:w-[275px] xl:h-[300px] xl:w-[300px] h-[450px] w-[450px]" 
+                <FramerImage src={img} alt={title} className=" aspect-1/1 lg:h-[275px] lg:w-[275px] xl:h-[300px] xl:w-[300px] h-[300px] w-[300px]" 
                 whileHover={{scale:1.08}}
                 transition={{duraction:0.2}}
                 priority
@@ -75,10 +100,10 @@ const EntrepriseWrap = ({title, img, link, tooltip}) => {
                                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                                 </svg>
                                 <div
-                                    class=" absolute left-full top-0 z-20 ml-3  whitespace-pre-wrap rounded bg-blue-500 py-[12px] px-4 text-sm font-semibold text-white opacity-0 group-hover:opacity-100"
+                                    class=" absolute left-full top-0 z-20 ml-3  whitespace-pre-wrap rounded  bg-dark py-[12px] px-4 text-sm font-semibold text-white opacity-0 group-hover:opacity-90"
                                 >
                                     <span
-                                    class="absolute left-[-3px] top-2 -z-10 h-2 w-2  rotate-45 rounded-sm bg-blue-500"
+                                    class="absolute left-[-3px] top-2 -z-10 h-2 w-2  rotate-45 rounded-sm bg-dark"
                                     ></span>
                                     <div className=''>
                                     {tooltip}
@@ -104,7 +129,14 @@ const Entreprises = () => {
     <section ref={targetRef} className='w-full mb-16 flex flex-col items-center justify-center dark:text-light min-h-screen mt-[5vh]'>
         
         <Layout className='pt-8'>
-        <AnimatedText text="Ils m'ont fait confiance" className='mb-32 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+        <AnimatedText text="Ils m'ont fait confiance..." className='mb-32 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+
+        <OnHoverImage 
+        hoveredImage={entreprise1}
+        image={entreprise2}
+        alt="test"
+        />
+
             <motion.div className='flex gap-8 flex-wrap justify-center items-center'
                 initial="initial"
                 variants={divEntreprise}
@@ -177,6 +209,7 @@ const Entreprises = () => {
                 />
                 </motion.div>
             </motion.div>
+            <p className='bg-light text-dark'>text</p>
         </Layout>
     </section>
   )

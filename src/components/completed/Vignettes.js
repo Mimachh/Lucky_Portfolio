@@ -44,7 +44,7 @@ const Project = ({title, type, img, link, github}) => {
 
     return(
         <article className='w-full flex flex-col items-center justify-center rounded-2xl border
-        border-solid border-dark bg-light p-2 relative dark:bg-red-700 dark:border-red-700 xs:p-4
+        border-solid border-dark bg-light p-2 relative dark:bg-dark dark:border-light xs:p-4
         '>
             <div className='absolute top-0 -right-2 -z-10 w-[101%] h-[102%] rounded-[2rem] bg-dark
             rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] xs:h-[101%] xs:rounded-[1.5rem]' />

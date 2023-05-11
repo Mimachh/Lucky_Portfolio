@@ -5,13 +5,8 @@ import profilePic from '../../../public/images/profile/Lucky.png'
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
-
 import camera from "../../../public/images/svgs/camera.svg"
-
-
-
 import Typewriter from 'typewriter-effect';
-import {motion} from 'framer-motion'
 
 const HomePage = () => {
   return (
@@ -67,32 +62,23 @@ const HomePage = () => {
 
                 <div className='flex items-center self-start mt-2 lg:self-center '>
                     <Link href="#montage"
-                    className='z-10 flex items-center bg-dark text-light 
+                    className='z-10 flex items-center bg-dark text-light hover:fill-white
                     p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                     border-2 border-solid border-transparent hover:border-dark
                     dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
                     hover:dark:border-light md:p-2 md:px-4 md:text-base'
                     >
                     Voir mes travaux
-                    <motion.span
-                        initial={{y:0}}
-                        whileInView={{y:5, transition:{duration:0.9, ease:"easeInOut", repeat:Infinity} }}
-                    >
-                        <LinkArrow className={"w-6 ml-1"} />
-                    </motion.span>
-                    
+                        <LinkArrow className={"w-6 ml-2 "} />
                     </Link>
-                    {/* <Link href="mailto:karl.mullr@gmail.com" target={"_blank"}
-                    className='ml-4 text-lg font-medium capitalize text-dark underline dark:text-light'
-                    >Contact</Link> */}
                 </div>
                 </div>
             </div>
         </Layout>
         
-        <div className='absolute right-8 bottom-8 inline-block w-48 md:hidden'>
+        {/* <div className='absolute right-8 bottom-8 inline-block w-48 md:hidden'>
         <Image src={camera} alt='Karl Muller' className='w-full h-auto' />
-        </div>
+        </div> */}
     </section>
   )
 }
