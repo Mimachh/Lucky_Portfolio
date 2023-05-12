@@ -7,14 +7,35 @@ import AnimatedText from '@/components/AnimatedText'
 import entreprise1 from '../../public/images/entreprises/jean.jpg'
 import entreprise2 from '../../public/images/entreprises/kokuban.jpg'
 import entreprise3 from '../../public/images/entreprises/nutrimeaLogo.jpg'
-import entreprise4 from '../../public/images/entreprises/vdf.png'
+import entreprise4 from '../../public/images/entreprises/veterans.jpg'
 import entreprise5 from '../../public/images/entreprises/vivrefrancais.webp'
 import entreprise6 from '../../public/images/entreprises/denis.jpg'
 
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", width: '50px', height: '50px' }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", width: '50px', height: '50px' }}
+      onClick={onClick}
+    />
+  );
+}
 
 
-const OnHoverImage = ({ hoveredImage, alt }) => {
+const OnHoverImage = ({ hoveredImage, alt, bg = 'bg-gray-200' }) => {
     const [hover, setHover] = useState(false);
     return (
       <div className="relative m-4 cursor-pointer overflow-hidden rounded-2xl"
@@ -36,7 +57,7 @@ const OnHoverImage = ({ hoveredImage, alt }) => {
             </div>
 
         ) : (
-          <Image src={hoveredImage} alt={alt} className='h-auto w-full relative z-50'/>
+          <Image src={hoveredImage} alt={alt} className={`h-auto w-full relative z-50 ${bg}`}/>
                
         )}
       </div>
@@ -54,6 +75,8 @@ export default class Responsive extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       initialSlide: 0,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
       responsive: [
         {
             breakpoint: 2000,

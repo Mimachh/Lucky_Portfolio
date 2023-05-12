@@ -90,7 +90,7 @@ const VideoMontage = () => {
 
 
   return (
-    <section ref={targetRef} className=' w-full flex flex-col items-center justify-center dark:text-light min-h-screen mt-[2vh] mb-[50vh]'>
+    <section ref={targetRef} className=' w-full flex flex-col items-center justify-center dark:text-light min-h-screen mt-[2vh] mb-[50vh]' >
         
         <Layout className='pt-8'>
             <div className='relative h-[250vh]'>
@@ -104,7 +104,7 @@ const VideoMontage = () => {
                     <div className='relative translate-x-centered-offset -translate-x-1/2 -translate-y-1/2 scale-[var(--scale)]'
 
                     >
-                        <div className='absolute mt-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 lg:w-3/4 xl:w-1/3 w-1/4 2xl:w-1/4 max-h-[800px] max-w-[450px]'>
+                        <div id='video' className='absolute mt-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 lg:w-3/4 xl:w-1/3 w-1/4 2xl:w-1/4 max-h-[800px] max-w-[450px]'>
                             <FramerImage src={outLine} alt="" className=""
                                 style={{
                                     opacity: opacityOutline,

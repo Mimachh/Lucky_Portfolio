@@ -61,7 +61,7 @@ const HomePage = () => {
 
 
                 <div className='flex items-center self-start mt-2 lg:self-center '>
-                    <Link href="#montage"
+                    <Link href="#video"
                     className='z-10 flex items-center bg-dark text-light hover:fill-white
                     p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                     border-2 border-solid border-transparent hover:border-dark
@@ -69,7 +69,6 @@ const HomePage = () => {
                     hover:dark:border-light md:p-2 md:px-4 md:text-base'
                     >
                     Voir mes travaux
-                        <LinkArrow className={"w-6 ml-2 "} />
                     </Link>
                 </div>
                 </div>

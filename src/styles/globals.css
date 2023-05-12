@@ -68,6 +68,16 @@
   }
 
 
+  .slick-prev:before {
+    font-size: 35px !important;
+    margin-left: -10px;
+
+  }
+
+  .slick-next:before {
+    font-size: 35px !important;
+    margin-left: 20px;
+  }
 /* .row-slide {
   background-color: red;
   animation: move 10s linear infinite;
